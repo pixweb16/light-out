@@ -37,10 +37,10 @@ class Board extends Component {
     }
 
     flipCell(y,x)     // flip the current cell
-    // flipCell(y-1,x)   // flip the hupper cell
-    // flipCell(y+1,x)   // flip the lower cell
-    // flipCell(y,x-1)   // flip the left cell
-    // flipCell(y,x+1)   // flip theright cell
+    flipCell(y-1,x)   // flip the hupper cell
+    flipCell(y+1,x)   // flip the lower cell
+    flipCell(y,x-1)   // flip the left cell
+    flipCell(y,x+1)   // flip theright cell
 
     // determine is the game has been won, check if all cells are false
     let newHasWon = newBoard.every( row => row.every(cell => cell===false) )
@@ -68,12 +68,12 @@ class Board extends Component {
     }
     
     // winning msg render
-    let winMsg = <h3>Congratulation You Win <span role="img" aria-label="happy">😃</span></h3>
+    let winMsg = <h3 className="winMsg">Congratulation You Win <span role="img" aria-label="happy">😃</span></h3>
 
     // RENDER
     return ( 
         <div className="Board">
-          <h2 className="Board-title">Light Out Game</h2>
+          <h2 className="Board-title"><span className="neon-orange">Light </span><span className="neon-blue">Out</span></h2>
           <table>
             <tbody>
               { // Render cells IF not winning yet
